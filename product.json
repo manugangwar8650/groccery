@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "src": "/images/product10.png",
+        "name": "Orange Fruit",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 49,
+        "sold": "50000+ Sold Recently"
+    },
+    {
+        "id": 2,
+        "src": "/images/product1.png",
+        "name": "Snickers Chocolate",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 69,
+        "sold": "35000+ Sold Recently"
+    },
+    {
+        "id": 3,
+        "src": "/images/product11.png",
+        "name": "Carrot Vegetables",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 79,
+        "sold": "56000+ Sold Recently"
+    },
+    {
+        "id": 4,
+        "src": "/images/product3.png",
+        "name": "Amul Milk",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 89,
+        "sold": "66000+ Sold Recently"
+    },
+    {
+        "id": 5,
+        "src": "/images/product4.png",
+        "name": "Fresh Milk Cream",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 32,
+        "sold": "76000+ Sold Recently"
+    },
+    {
+        "id": 6,
+        "src": "/images/product5.png",
+        "name": "Coconut Fruit",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 99,
+        "sold": "23000+ Sold Recently"
+    },
+    {
+        "id": 7,
+        "src": "/images/product6.png",
+        "name": "Abocado Food",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 25,
+        "sold": "96000+ Sold Recently"
+    },
+    {
+        "id": 8,
+        "src": "/images/product7.png",
+        "name": "Pomegranate Fruit",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 66,
+        "sold": "41000+ Sold Recently"
+    },
+    {
+        "id": 9,
+        "src": "/images/product8.png",
+        "name": "Cherries Fruit",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 35,
+        "sold": "71000+ Sold Recently"
+    },
+    {
+        "id": 10,
+        "src": "/images/product9.png",
+        "name": "Strawberry Fruit",
+        "unit": "1 UNIT ⭐4.5",
+        "price": 95,
+        "sold": "96000+ Sold Recently"
+    }
+]

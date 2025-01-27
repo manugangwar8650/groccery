@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        h2,
+        h4,
+        p {
+            margin: 0;
+        }
+
+        /* Flexbox Layout */
+        .shopping-cart {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        /* Cart Items Section */
+        .cart-items {
+            flex: 3;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-items header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .cart-table {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .cart-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+
+        .product-details {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex: 2;
+        }
+
+        .product-details img {
+            width: 60px;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .product-details .product-name {
+            font-weight: bold;
+
+        }
+
+        /* .product-category{
+            font-family: "Poppins", serif;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 16px;
+        } */
+
+        .quantity {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .quantity-btn {
+            background: #f1f1f1;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .quantity-btn:hover {
+            background: rgb(233, 233, 233);
+        }
+
+        .price,
+        .total {
+            flex: 1;
+            text-align: center;
+        }
+
+        .product-sold {
+            font-size: 0.9em;
+            color: red;
+            text-decoration: none;
+        }
+
+        .product-sold:hover {
+            text-decoration: underline;
+        }
+
+        .continue-shopping {
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+            font-size: 0.9em;
+        }
+
+        /* Order Summary Section */
+        .order-summary {
+            flex: 1;
+            padding: 20px;
+            background: #f9f9f9;
+            border-left: 1px solid #ddd;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .order-summary h2 {
+            margin-bottom: 15px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .promo-code {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .promo-code input {
+            /* width: 100%; */
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .apply-btn {
+            background: #ff6b6b;
+            color: #fff;
+            border: none;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .apply-btn:hover {
+            background: #e65a5a;
+        }
+
+        .total-cost {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 15px;
+            color: rgb(0, 151, 0);
+        }
+
+        .checkout-btn {
+            background: #6c63ff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            width: 100%;
+        }
+
+        .checkout-btn:hover {
+            background: #554fcf;
+        }
+        /* .total{
+            
+        } */
+        .fa-trash{
+            border: 0.1px solid rgb(241, 241, 241);
+            padding: 8px 10px;
+            font-size: 19px;
+            
+        }
+        select#shipping-cost{
+            border: 1px solid rgb(214, 214, 214);
+            outline: none;
+            /* border-radius: 15px; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="shopping-cart">
+        <!-- Cart Items Section -->
+        <div class="cart-items">
+            <header>
+                <h2>Shopping Cart</h2>
+                <h4 id="cart-value" ><span id="total-items">3</span> Items</h4>
+            </header>
+            <div class="add-to-cart-product">
+               
+
+            </div>
+        </div>
+
+        <template id="template-cart-item">
+            <div class="cart-table">
+                    <div class="cart-row" data-price="119.99">
+                        <div class="product-details">
+                            <img class="p-img"src="/images/product10.png" alt="Platinum Headset">
+                            <div>
+                                <p class="product-name">Platinum Headset</p>
+                                <!-- <p class="product-category">PS4</p> -->
+                                <a href="#" class="product-sold">50000+ Sold Recently</a>
+                            </div>
+                        </div>
+                        <div class="price">₹<span class="item-price"></span></div>
+                        <div class="quantity">
+                            <button class="quantity-btn decrease">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="quantity-btn increase">+</button>
+                        </div>
+                        
+                        <div class="total"><i class="fa-solid fa-trash"></i></div>
+                    </div>
+                </div>
+
+        </template>
+
+        <!-- Order Summary Section -->
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-item">
+                <p>Items</p>
+                <p>₹<span id="order-total"></span></p>
+            </div>
+            <div class="summary-item">
+                <p>Shipping</p>
+                <select id="shipping-cost">
+                    <option value="50">Standard Delivery - ₹50.00</option>
+                    <!-- <option value="100">Express Delivery - ₹100.00</option> -->
+                </select>
+            </div>
+            <div class="promo-code">
+                <p>Promo Code</p>
+                <input type="text" id="promo-code" placeholder="Enter your code">
+                <button class="apply-btn">Apply</button>
+            </div>
+            <div class="total-cost">
+                <p>Total Cost</p>
+                <p>₹<span id="final-total"></span></p>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+</body>
+<script src="updatequantity.js"></script>
+
+</html>
